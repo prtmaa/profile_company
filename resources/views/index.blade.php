@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{$about->nama}}</title>
 
+    <link rel="shortcut icon" href="{{$about->logo}}" type="image/x-icon">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
@@ -29,7 +31,7 @@
         <div class="navbar-nav">
             <a href="#home">Home</a>
             <a href="#about">Tentang Kami</a>
-            <a href="#menu">Menu</a>
+            <a href="#menu">Fitur</a>
             <a href="#contact">Kontak</a>
         </div>
 
@@ -146,7 +148,7 @@
                     </div>
                     <div class="input-group">
                         <i class="fa-solid fa-phone"></i>
-                        <input type="text" name="telepon" id="telepon" placeholder="no hp">
+                        <input type="number" name="telepon" id="telepon" placeholder="no hp">
                     </div>
                     <div class="input-group">
                         <i class="fa-solid fa-envelope"></i>
@@ -175,7 +177,11 @@
             <a href="#contact">Kontak</a>
         </div>
 
-        <h3>{{$about->alamat}}</h3>
+        <div>
+            <h2>{{$about->nama}}</h2>
+            <h3>{{$about->alamat}}</h3>
+            <p>Phone: {{$about->telepon}}</p>
+        </div>
 
         <div class="credit">
             <p>Created with <a href="#">love</a>. | &copy; 2023.</p>

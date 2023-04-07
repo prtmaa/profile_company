@@ -32,7 +32,7 @@ Route::post('logout/', [LoginController::class, 'logout']);
 
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('dashboard/', [DashboardController::class, 'index']);
+    Route::get('/dashboard', [DashboardController::class, 'index']);
 
     Route::get('/slider/data', [SliderController::class, 'data'])->name('slider.data');
     Route::resource('/slider', SliderController::class);
@@ -48,4 +48,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/pesan/data', [PesanController::class, 'data'])->name('pesan.data');
 });
 
-Route::post('/pesan', [PesanController::class, 'store'])->name('pesan.store');
+Route::post('/pesan', [PesanController::class, 'store'])->name('pesan.store')->middleware('guest');

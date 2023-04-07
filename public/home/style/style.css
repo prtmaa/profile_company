@@ -142,8 +142,8 @@ body {
     display: inline-block;
     padding: 1rem 3rem;
     font-size: 1.4rem;
-    color: #0a01ff;
-    background-color: var(--primary);
+    color: var(--primary);
+    background-color: #0a01ff;
     border-radius: 0.5rem;
     box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
 
@@ -255,6 +255,14 @@ body {
 }
 
 /* contact section */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
 .contact .row {
     display: flex;
     margin-top: 2rem;
@@ -802,4 +810,9 @@ footer .credit a {
     .img-slider .navigation {
         bottom: 10px;
     }
+
+    /* scrol top */
+
+
+
 }

@@ -12,7 +12,7 @@
 @section('content')
 <div class="row">
     <div class="col-lg-12 align-items-center">
-        <div class="card card-primary card-outline col-lg-8 ">
+        <div class="card card-primary card-outline col-lg-12 ">
             <form action="{{ route('about.update') }}" method="post" class="form-about" data-toggle="validator" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body" >
@@ -79,7 +79,7 @@
                     <div class="form-group row">
                         <label for="map" class="col-lg-3 control-label">Link Map</label>
                         <div class="col-lg-8">
-                            <input type="text" name="map" class="form-control" id="map" required>
+                            <textarea rows="3" name="map" class="form-control" id="map" required></textarea>
                             <span class="help-block with-errors"></span>
                         </div>
                     </div>
@@ -160,10 +160,10 @@
                 $('[name=yt]').val(response.yt);
 
 
-                $('.tampil-logo').html(`<img src="{{ url('/') }}${response.logo}" width="200">`);
-                $('.tampil-background').html(`<img src="{{ url('/') }}${response.background}" width="200">`);
+                $('.tampil-logo').html(`<img src="${response.logo}" width="200">`);
+                $('.tampil-background').html(`<img src="${response.background}" width="200">`);
 
-                $('[rel=icon]').attr('href', `{{ url('/') }}/${response.logo}`);
+                $('[rel=icon]').attr('href', `${response.logo}`);
             })
             .fail(errors => {
                 alert('Tidak dapat menampilkan data');

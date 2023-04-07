@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{config ('app.name')}} | @yield('tittle')</title>
+  <title>Admin | @yield('tittle')</title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
@@ -51,7 +51,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               @section('badge')
-              <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>                 
+              <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Dashboard</a></li>                 
               @show
             </ol>
           </div><!-- /.col -->

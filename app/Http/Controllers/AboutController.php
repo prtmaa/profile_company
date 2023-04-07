@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class AboutController extends Controller
 {
@@ -34,19 +35,21 @@ class AboutController extends Controller
         $about->yt = $request->yt;
 
         if ($request->hasFile('logo')) {
+            File::delete($about->logo);
             $file = $request->file('logo');
             $nama = 'logo-' . date('YmdHis') . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('/img'), $nama);
 
-            $about->logo = "/img/$nama";
+            $about->logo = "img/$nama";
         }
 
         if ($request->hasFile('background')) {
+            File::delete($about->background);
             $file = $request->file('background');
             $nama = 'background-' . date('YmdHis') . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('/img'), $nama);
 
-            $about->background = "/img/$nama";
+            $about->background = "img/$nama";
         }
 
 

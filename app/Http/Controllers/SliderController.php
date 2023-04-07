@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Yajra\DataTables\Facades\DataTables;
 
 class SliderController extends Controller
@@ -57,11 +58,12 @@ class SliderController extends Controller
 
 
         if ($request->hasFile('gambar')) {
+            File::delete($slider->gambar);
             $file = $request->file('gambar');
             $nama = 'slider-' . date('YmdHis') . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('/img'), $nama);
 
-            $slider->gambar = "/img/$nama";
+            $slider->gambar = "img/$nama";
         }
 
         $slider->save();
@@ -101,7 +103,7 @@ class SliderController extends Controller
             $nama = 'logo-' . date('YmdHis') . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('/img'), $nama);
 
-            $slider->gambar = "/img/$nama";
+            $slider->gambar = "img/$nama";
         }
 
         $slider->update();
@@ -115,6 +117,7 @@ class SliderController extends Controller
     public function destroy($id)
     {
         $slider = Slider::find($id);
+        File::delete($slider->gambar);
         $slider->delete();
 
         return response(null, 204);

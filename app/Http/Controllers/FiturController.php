@@ -62,7 +62,7 @@ class FiturController extends Controller
             $nama = 'fitur-' . date('YmdHis') . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('/img'), $nama);
 
-            $fitur->gambar = "/img/$nama";
+            $fitur->gambar = "img/$nama";
         }
 
         $fitur->save();
@@ -98,11 +98,12 @@ class FiturController extends Controller
         $fitur->deskripsi = $request->deskripsi;
 
         if ($request->hasFile('gambar')) {
+            File::delete($fitur->gambar);
             $file = $request->file('gambar');
             $nama = 'logo-' . date('YmdHis') . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('/img'), $nama);
 
-            $fitur->gambar = "/img/$nama";
+            $fitur->gambar = "img/$nama";
         }
 
         $fitur->update();

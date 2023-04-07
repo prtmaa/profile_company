@@ -1,8 +1,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="#" class="brand-link">
       <img src="" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">{{config ('app.name')}}</span>
+      <span class="brand-text font-weight-light">Admin</span>
     </a>
 
     <!-- Sidebar -->
@@ -25,7 +25,7 @@
                with font-awesome or any other icon font library -->
 
                <li class="nav-item">
-                <a href="" class="nav-link active">
+                <a href="{{url('dashboard')}}" class="nav-link active">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Dashboard
@@ -72,7 +72,7 @@
 
               <form action="/logout" method="post">
                 @csrf
-              <li class="nav-item">
+              <li class="nav-item mt-2">
                 <button type="submit" href="#" class="nav-link active">
                     <i class="nav-icon fas fa-right-from"></i>
                   <p>

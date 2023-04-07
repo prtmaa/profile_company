@@ -130,8 +130,8 @@
                 $('#modal-form [name=judul]').val(response.judul);
                 $('#modal-form [name=deskripsi]').val(response.deskripsi);
 
-                $('#modal-form .show-img').html(`<img src="{{ url('/') }}${response.gambar}" width="100px">`);
-                $('[rel=icon]').attr('href', `{{ url('/') }}/${response.gambar}`);
+                $('#modal-form .show-img').html(`<img src="${response.gambar}" width="100px">`);
+                $('[rel=icon]').attr('href', `${response.gambar}`);
             })
             .fail((errors) => {
                 alert('Tidak dapat menampilkan data');
