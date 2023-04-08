@@ -48,7 +48,7 @@
             <h1 class="animate__animated animate__fadeIn">Bergabung dengan <span>{{$about->nama}}</span></h1>
             <p class="animate__animated animate__fadeIn animate__delay-2s">{{$about->deskripsi}}
             </p>
-            <a href="menu.html" class="cta animate__animated animate__fadeIn">Unduh Sekarang</a>
+            <a href="#" class="cta animate__animated animate__fadeIn">Unduh Sekarang</a>
         </main>
     </section>
 
@@ -109,7 +109,6 @@
     <section class="menu" id="menu">
         <div data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
             <h2><span>Fitur</span> Kami</h2>
-            <p>Fitur yang kami miliki</p>
         </div>
 
         <div class="row">
@@ -164,6 +163,13 @@
 
     <!-- footer start -->
     <footer>
+        
+        <div class="addres">
+            <h2>{{$about->nama}}</h2>
+            <h3>{{$about->alamat}}</h3>
+            <p>Phone: {{$about->telepon}}</p>
+        </div>
+        
         <div class="socials">
             <a href="{{$about->ig}}"><i class="fa-brands fa-instagram"></i></a>
             <a href="{{$about->yt}}"><i class="fa-brands fa-twitter"></i></a>
@@ -175,12 +181,6 @@
             <a href="#about">Tentang Kami</a>
             <a href="#menu">Menu</a>
             <a href="#contact">Kontak</a>
-        </div>
-
-        <div>
-            <h2>{{$about->nama}}</h2>
-            <h3>{{$about->alamat}}</h3>
-            <p>Phone: {{$about->telepon}}</p>
         </div>
 
         <div class="credit">
