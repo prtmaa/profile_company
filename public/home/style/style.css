@@ -264,7 +264,7 @@ input::-webkit-inner-spin-button {
 .contact .row {
     display: flex;
     margin-top: 2rem;
-    background-color: #222;
+    background-color: #cacaca;
     border-radius: 10px;
     /* flex-wrap: wrap; */
 }
@@ -282,11 +282,12 @@ input::-webkit-inner-spin-button {
 }
 
 .contact .row form .input-group {
+    border-radius: 10px;
     display: flex;
     align-items: center;
     margin-top: 2rem;
     background-color: var(--bg);
-    border: 1px solid #eee;
+    border: 1px solid #100f0f;
     padding-left: 2rem;
 }
 
@@ -295,11 +296,12 @@ input::-webkit-inner-spin-button {
     padding: 1rem;
     font-size: 1.5rem;
     background: none;
-    color: #1082c5;
+    color: #cacaca;
 }
 
 .contact .row form .input-group i {
     font-size: 1.7rem;
+    color: #cacaca;
 }
 
 .contact .row form .btn {
